@@ -531,6 +531,9 @@
    background-image: url(../img/shop-bg.png);
    background-repeat: no-repeat;
    background-position: right center;
+   .slider-arrows {
+      opacity: .25;
+   }
 }
 
 .shop__slider {
@@ -614,5 +617,119 @@
    font-size: 18px;
    line-height: 40px;
 }
+
+.surfboard {
+   position: relative;
+}
+
+.surfboard-box {
+   position: absolute;
+}
+
+.surfboard-box__circle {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   position: relative;
+   background-color: #fff;
+   cursor: pointer;
+   &.active {
+      .circle-row {
+         transform: translate(-50%, -50%) rotate(0deg);
+      }
+   }
+}
+
+.circle-row {
+   background-color: $green;
+   position: absolute;
+   width: 12px;
+   height: 2px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) rotate(0deg);
+   & + .circle-row {
+      transform: translate(-50%, -50%) rotate(90deg);
+   }
+}
+
+.surfboard-box__circle.active + .surfboard-box__content {
+   display: block;
+}
+
+.surfboard-box__content {
+   display: none;
+   position: absolute;
+   width: 359px;
+   top: -15px;
+   left: 40px;
+   font-weight: 800;
+   font-size: 24px;
+   line-height: 24px;
+   padding-left: 104px;
+   &::before {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 1px;
+      background-color: #fff;
+      left: 0;
+      top: 50%;
+   }
+}
+
+.surfboard__position--1 {
+   right: 40px;
+   top: 215px;
+}
+
+.surfboard__position--2 {
+   left: -5px;
+   top: 315px;
+}
+
+.surfboard__position--3 {
+   left: 52px;
+   top: 610px;
+   .surfboard-box__content {
+      padding-left: 0;
+      padding-right: 104px;
+      top: -15px;
+      left: -400px;
+      &::before {
+         content: "";
+         position: absolute;
+         width: 80px;
+         height: 1px;
+         background-color: #fff;
+         right: 0;
+         left: auto;
+         top: 50%;
+      }
+   }
+}
+
+.footer {
+   text-align: center;
+   padding: 285px 0 34px;
+   .btn {
+      span {
+         padding: 17px 17px 15px;
+         &::after {
+            display: none;
+         }
+      }
+   }
+}
+
+.footer__copy {
+   font-size: 12px;
+   line-height: 14px;
+   letter-spacing: 1.05px;
+   opacity: 0.5;
+   padding-top: 27px;
+}
+
+
 
 @import "media";
